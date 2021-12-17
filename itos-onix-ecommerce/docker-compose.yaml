@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  server:
+    build:
+      context: Server
+    ports:
+      - "9000:9000"
+
+  front:
+    build:
+      context: Vue/ecommerce
+    ports:
+      - "8080:8080"
