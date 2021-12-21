@@ -109,12 +109,11 @@
                     <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
                         <div class="storefront-sorting">
                             <form class="woocommerce-ordering" method="get">
-                                <select name="orderby" class="orderby">
+                                <select  name="orderby" class="orderby" v-on:change="changeItem()" >
                                     <option value="menu_order" selected="selected">Ordenar Default</option>
                                     <option value="rating">Precio Ascendente</option>
                                     <option value="date">Precio descendente</option>
                                 </select> 
-
                             </form>
                             <!--form-->
 
@@ -422,6 +421,8 @@ export default {
     },
     data(){
         return {
+            datoSelect : 'Mensaje' ,
+
             data:[],
             doc_actual: {},
             array_actual: [],
@@ -461,8 +462,6 @@ export default {
         if(!ck || !ck.ok)
         this.$router.push({ path: 'login' });
 
-
-        
         // this.data = JSON.parse(this.$cookies.get("_ct_"));
     
         // var _this = this;
@@ -484,8 +483,12 @@ export default {
     },
 
     methods: {
+        changeItem: function changeItem(){
+            console.log("Valor: ", this.datoSelect)
+        },
+
         async setFiltro(type, valor){
-            console.log('filtrando');
+            console.log('filtrando...');
             if(type)this.filtro[type] = valor;
 
             var catalogo = await this.$pouch.find({
@@ -499,6 +502,7 @@ export default {
                 var filtro = this.filtro;
                 if(this.filtro.generos)
                     docs = docs.filter(function(x){return x.genero.id == filtro.generos;});
+
                 if(this.filtro.lineas)
                     docs = docs.filter(function(x){return x.linea.id == filtro.lineas;});
                 
