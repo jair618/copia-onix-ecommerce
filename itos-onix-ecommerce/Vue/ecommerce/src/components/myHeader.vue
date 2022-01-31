@@ -4,7 +4,7 @@
         <!-- <span @click="setMarca(item._id)" :class="$cookies.get('_mc_')==item._id?'text-primary':''" v-for="item in marcas" :key="item._id">{{item.name}}</span> -->
     </div>
     <nav class="navbar navbar-default">
-        <div class="navbar-header">
+        <div class="nav navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -23,119 +23,22 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="container">
-                <ul class="nav navbar-nav">
-                    <li class="current-menu-item dropdown">
-                       <router-link to="/home" class="primary-color pull-right">Inicio</router-link>
-                    </li>
-                    <li class="dropdown">
-                       <router-link to="/clientes" class="primary-color pull-right">Clientes</router-link>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
+           <!-- <div class="container"> -->
+                <ul class="navbar-nav">
+                    <li class="current-menu-item">
+                       <router-link to="/home" class="active">Inicio</router-link>
                     </li>
 
-                    <!-- <li class="mega-link dropdown">
-                      <a href="#" class="dropdown-toggle" >Women’s </a>
-                        <div class="mega-menu dropdown-menu">
-                            <div class="mega-wrap row">
-                                <div class="col-sm-3">
-                                    <h6>Title</h6>
-                                    <ul>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                        <li><a href="#">Opcion &amp; Opcion</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <h6>Title</h6>
-                                    <ul>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <h6>Opcion</h6>
-                                    <ul>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-3">
-                                  <figure>
-                                      <a href="#"><img src="assets/images/sidebar-banner.jpg" alt=""></a>
-                                  </figure>  
-                                </div>
-                            </div> 
-                        </div>
+                    <li class="">
+                       <router-link to="/clientes" class="">Clientes</router-link>
                     </li>
 
-                    <li class="mega-link dropdown">
-                        <a href="#" class="dropdown-toggle">Men’s </a>
-                        <div class="mega-menu dropdown-menu">
-                            <div class="mega-wrap row">
-                                <div class="col-sm-3">
-                                    <h6>Opcion</h6>
-                                    <ul>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <h6>Title</h6>
-                                    <ul>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                        <li><a href="#">Opcion</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-3">
-                                  <figure>
-                                      <a href="#"><img src="assets/images/sidebar-banner.jpg" alt=""></a>
-                                  </figure>  
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
+                   <!-- Comentario en la otra pestaña-->
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Comprar</a>
-                        <ul class="sub-menu dropdown-menu">
-                            <li><a href="">Comprar #1</a></li>
-                            <li><a href="">Comprar #2</a></li>
-                            <li><a href="">Comprar #3</a></li>
-                            <li><a href="">Comprar #4</a></li>
-                        </ul>
-                    </li> -->
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Vistas</a>
-                        <ul class="sub-menu dropdown-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vistas</a>
+                        <ul class="dropdown-menu">
                             <li><router-link to="/rutas" class="primary-color">Rutas</router-link></li>
                             <li><router-link to="/catalogo" class="primary-color">Catálogo</router-link></li>
                             <li><router-link to="/vencidos" class="primary-color">Pedidos Vencidos</router-link></li>
@@ -143,7 +46,7 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+            <!-- </div> -->
             <!--container-->                
         </div>
         <!-- /.navbar-collapse -->

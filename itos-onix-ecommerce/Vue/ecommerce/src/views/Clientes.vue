@@ -101,7 +101,7 @@ export default {
       
       this.$cookies.set('_cl_', JSON.stringify(item));
       
-      alert('Cliente seleccionado==', this.data[0].name);
+      alert('Cliente seleccionado ==', this.$pouch);
       //location.reload();
       //this.$router.push({ path: 'dataruta', query: {ids:[]} });
     },
@@ -117,13 +117,13 @@ export default {
     },
     async getClientes(){
       var selected = this.$cookies.get("_cls_").split(',');
-
-      console.log('Seleccionado ?',selected);
-
+      
       var catalogo = await this.$pouch.find({
         selector: {type: 'clientes'},
       });  
 
+    console.log('Seleccionado ?',selected);
+      console.log('Catalogo', catalogo)
       this.data = catalogo.docs.filter(function(x){
         return selected.indexOf(x._id.split('_')[1]) > -1
       });
