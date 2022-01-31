@@ -182,10 +182,16 @@ export default {
         const _data = response.map(function(x){
             x.type = 'clientes';
             // x.selected = false;
+          
             return x;
         });
 
-        console.log(_data);
+        console.log('Datos de cliente ',_data);
+
+        for(var i= 0; i< this.data.length; i++){
+          console.log('Nombre de cliente ',this.data[i].name)
+        }
+        
 
         this.$pouch.bulkDocs(_data).catch(function (err) {
             console.log(err);
