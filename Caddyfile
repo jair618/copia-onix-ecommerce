@@ -1,0 +1,7 @@
+http://localhost/api {
+  reverse_proxy server:9000
+}
+
+ http://3.19.12.191:9000/api { 
+  reverse_proxy server:9000
+ }
